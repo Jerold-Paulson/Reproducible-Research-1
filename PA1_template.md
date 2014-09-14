@@ -225,6 +225,18 @@ colnames(modified_input_data)[4] <- "Weekday/Weekend"
 library(chron)
 ## use the lubridate package for easy conversion to POSIX format via the mdy function
 library(lubridate)
+```
+
+```
+## 
+## Attaching package: 'lubridate'
+## 
+## The following objects are masked from 'package:chron':
+## 
+##     days, hours, minutes, seconds, years
+```
+
+```r
 mod_index <- 1
 while (mod_index <= dim(modified_input_data)[1]){
   test_date <- mdy(modified_input_data[mod_index,2])

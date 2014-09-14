@@ -6,6 +6,7 @@
 
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="generator" content="pandoc" />
 
 
@@ -240,8 +241,14 @@ colnames(modified_input_data)[4] &lt;- &quot;Weekday/Weekend&quot;
 ## use the chron package for the weekend function
 library(chron)
 ## use the lubridate package for easy conversion to POSIX format via the mdy function
-library(lubridate)
-mod_index &lt;- 1
+library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: 'lubridate'
+## 
+## The following objects are masked from 'package:chron':
+## 
+##     days, hours, minutes, seconds, years</code></pre>
+<pre class="r"><code>mod_index &lt;- 1
 while (mod_index &lt;= dim(modified_input_data)[1]){
   test_date &lt;- mdy(modified_input_data[mod_index,2])
   if (is.weekend(test_date)) modified_input_data[mod_index,4] &lt;-&quot;weekend&quot; else modified_input_data[mod_index,4] &lt;- &quot;weekday&quot;
@@ -313,12 +320,12 @@ $(document).ready(function () {
 
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
+<!-- dynamically load mathjax for compatibility with --self-contained -->
 <script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
